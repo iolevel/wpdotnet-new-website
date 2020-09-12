@@ -19,16 +19,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $email = new SendGrid\Email();
+    $email = new SendGrid\Mail\Mail();
 
     // set subject
     $email->setSubject("WpDotNet Contact from $name");
 
     // attach the body of the email
-    $email->setFrom($fromemail);
-    $email->setFromName($name);
-    $email->addTo('wpdotnet@iolevel.com');
-    $email->setText("$message
+    $email->setFrom($fromemail, $name);
+    $email->addTo('wpdotnet@iolevel.com', "iolevel");
+    $email->addContent("text/plain", "$message
     
 ---
 From: $name <$fromemail>
@@ -39,7 +38,7 @@ From: $name <$fromemail>
     $password = getenv("SENDGRID_APIKEY");
 
     // SendGrid object
-    $sendgrid = new SendGrid($username, $password);
+    $sendgrid = new SendGrid($password);
 
     try
     {
