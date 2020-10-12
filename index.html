@@ -407,7 +407,12 @@
                                 <p class="form-message"></p>
                                 <div class="col-md-12">
                                     <div class="form-input light-rounded-buttons mt-30">
-                                        <button class="main-btn light-rounded-two">Send Message</button>
+                                        <button
+                                        class="main-btn light-rounded-two"
+                                        data-sitekey="6LcbjNYZAAAAAOsNh0U8_yzG61WKjgl7HjZ2TW0B" 
+                                        data-callback='onSubmit' 
+                                        data-action='submit'
+                                        >Send Message</button>
                                     </div> <!-- form input -->
                                 </div>
                             </div> <!-- row -->
@@ -501,6 +506,9 @@
     
     <!--====== Main js ======-->
     <script src="assets/js/main.js"></script>
+
+    <!-- recaptcha api -->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     
 </body>
 
