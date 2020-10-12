@@ -25,8 +25,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email->setSubject("WpDotNet Contact from $name");
 
     // attach the body of the email
-    $email->setFrom($fromemail, $name);
+    $email->setFrom('info@iolevel.com', "iolevel");
+    //$email->setFrom($fromemail, $name);
+    $email->setReplyTo($fromemail, $name);
     $email->addTo('wpdotnet@iolevel.com', "iolevel");
+    //$email->addCc('jakub@iolevel.com', "Jakub Misek");
+    //$email->addCc('ben@iolevel.com', "Benjamin Fistein");
     $email->addContent("text/plain", "$message
     
 ---

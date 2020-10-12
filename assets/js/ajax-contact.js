@@ -11,6 +11,9 @@ $(function() {
 		// Stop the browser from submitting the form.
 		e.preventDefault();
 
+		//
+		$(formMessages).text('Sending the mesage ...');
+
 		// Serialize the form data.
 		var formData = $(form).serialize();
 
