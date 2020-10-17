@@ -15,10 +15,10 @@ $(function() {
         var scroll = $(window).scrollTop();
         if (scroll < 20) {
             $(".navbar-area").removeClass("sticky");
-            $(".navbar-area img").attr("src", "assets/images/wpdotnet-logo.png");
+            $(".navbar-area img").attr("src", "assets/images/wpdotnet_logo1.png");
         } else {
             $(".navbar-area").addClass("sticky");
-            $(".navbar-area img").attr("src", "assets/images/wpdotnet-logo2.png");
+            $(".navbar-area img").attr("src", "assets/images/wpdotnet_logo1.png");
         }
     });
 
