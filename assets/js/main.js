@@ -15,7 +15,7 @@ $(function() {
         var scroll = $(window).scrollTop();
         if (scroll < 20) {
             $(".navbar-area").removeClass("sticky");
-            $(".navbar-area img").attr("src", "assets/images/wpdotnet_logo1.png");
+            $(".navbar-area img").attr("src", "assets/images/logo_white_text.png");
         } else {
             $(".navbar-area").addClass("sticky");
             $(".navbar-area img").attr("src", "assets/images/wpdotnet_logo1.png");
