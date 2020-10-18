@@ -3,38 +3,41 @@
 
 <head>
     <meta charset="utf-8">
-    
+
     <!--====== Title ======-->
     <title>WpDotNet | WordPress on .NET Core</title>
-    
+
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="assets/images/wpdotnet-favicon.png" type="image/png">
-        
+
     <!--====== Magnific Popup CSS ======-->
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
-        
+
     <!--====== Slick CSS ======-->
     <link rel="stylesheet" href="assets/css/slick.css">
-        
+
     <!--====== Line Icons CSS ======-->
     <link rel="stylesheet" href="assets/css/LineIcons.css">
-        
+
     <!--====== Bootstrap CSS ======-->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    
+
     <!--====== Default CSS ======-->
     <link rel="stylesheet" href="assets/css/default.css">
-    
+
     <!--====== Style CSS ======-->
     <link rel="stylesheet" href="assets/css/style.css">
-    
+
+    <!-- recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcbjNYZAAAAAOsNh0U8_yzG61WKjgl7HjZ2TW0B"></script>
+
 </head>
 
 <body>
-       
+
     <!--====== PRELOADER PART START ======-->
 
     <div class="preloader">
@@ -55,7 +58,7 @@
     </div>
 
     <!--====== PRELOADER PART ENDS ======-->
-    
+
     <!--====== NAVBAR TWO PART START ======-->
 
     <section class="navbar-area">
@@ -95,7 +98,7 @@
     </section>
 
     <!--====== NAVBAR TWO PART ENDS ======-->
-    
+
     <!--====== SLIDER PART START ======-->
 
     <section id="home" class="slider_area">
@@ -162,7 +165,7 @@
     </section>
 
     <!--====== SLIDER PART ENDS ======-->
-    
+
     <!--====== FEATRES TWO PART START ======-->
 
     <section id="features" class="features-area">
@@ -225,7 +228,7 @@
         </div> <!-- container -->
     </section>
 
-     <!--====== FAQ START ======-->
+    <!--====== FAQ START ======-->
 
     <section id="faq" class="about-area">
         <div class="container">
@@ -319,8 +322,8 @@
     </section>
 
     <!--====== FAQ ENDS ======-->
-    
-    
+
+
     <!--====== CONTACT PART START ======-->
 
     <section id="contact" class="contact-area">
@@ -374,7 +377,7 @@
                 <div class="col-lg-12">
                     <div class="contact-wrapper form-style-two pt-115">
                         <h4 class="contact-title pb-10"><i class="lni lni-envelope"></i> Leave <span>A Message.</span></h4>
-                        
+
                         <form id="contact-form" action="assets/contact.php" method="post">
                             <div class="row">
                                 <div class="col-md-6">
@@ -407,15 +410,11 @@
                                 <p class="form-message"></p>
                                 <div class="col-md-12">
                                     <div class="form-input light-rounded-buttons mt-30">
-                                        <button
-                                        class="main-btn light-rounded-two"
-                                        data-sitekey="6LcbjNYZAAAAAOsNh0U8_yzG61WKjgl7HjZ2TW0B" 
-                                        data-callback='onSubmit' 
-                                        data-action='submit'
-                                        >Send Message</button>
+                                        <button class="main-btn light-rounded-two">Send Message</button>
                                     </div> <!-- form input -->
                                 </div>
                             </div> <!-- row -->
+                            <input type="hidden" name="recaptcha_response" id="recaptchaResponse" />
                         </form>
                     </div> <!-- contact wrapper form -->
                 </div>
@@ -424,7 +423,7 @@
     </section>
 
     <!--====== CONTACT PART ENDS ======-->
-    
+
     <!--====== FOOTER PART START ======-->
 
     <section class="footer-area footer-dark">
@@ -453,16 +452,16 @@
     </section>
 
     <!--====== FOOTER PART ENDS ======-->
-    
+
     <!--====== BACK TOP TOP PART START ======-->
 
     <a href="#" class="back-to-top"><i class="lni lni-chevron-up"></i></a>
 
-    <!--====== BACK TOP TOP PART ENDS ======-->    
+    <!--====== BACK TOP TOP PART ENDS ======-->
 
     <!--====== PART START ======-->
 
-<!--
+    <!--
     <section class="">
         <div class="container">
             <div class="row">
@@ -482,34 +481,31 @@
     <!--====== Jquery js ======-->
     <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
-    
+
     <!--====== Bootstrap js ======-->
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-    
+
     <!--====== Slick js ======-->
     <script src="assets/js/slick.min.js"></script>
-    
+
     <!--====== Magnific Popup js ======-->
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    
+
     <!--====== Ajax Contact js ======-->
     <script src="assets/js/ajax-contact.js"></script>
-    
+
     <!--====== Isotope js ======-->
     <script src="assets/js/imagesloaded.pkgd.min.js"></script>
     <script src="assets/js/isotope.pkgd.min.js"></script>
-    
+
     <!--====== Scrolling Nav js ======-->
     <script src="assets/js/jquery.easing.min.js"></script>
     <script src="assets/js/scrolling-nav.js"></script>
-    
+
     <!--====== Main js ======-->
     <script src="assets/js/main.js"></script>
 
-    <!-- recaptcha api -->
-    <script src="https://www.google.com/recaptcha/api.js"></script>
-    
 </body>
 
 </html>

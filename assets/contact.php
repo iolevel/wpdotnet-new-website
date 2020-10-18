@@ -19,6 +19,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
+    $recaptcha = json_decode(file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . getenv('RECAPTCHA_PRIVATE') . '&response=' . $_POST['recaptcha_response']));
+    if ($recaptcha->score < 0.5) {
+        echo "Error validating the request.";
+        exit;
+    }
+
     $email = new SendGrid\Mail\Mail();
 
     // set subject
@@ -36,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ---
 From: $name <$fromemail>
     ");
-    
+
     // account credentials
     $username = getenv("SENDGRID_UNAME");
     $password = getenv("SENDGRID_APIKEY");
