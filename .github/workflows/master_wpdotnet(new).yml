@@ -18,4 +18,3 @@ jobs:
         app-name: 'wpdotnet(new)'
         slot-name: 'new'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_e9075c1ebe1e4189af2002e3f696e763 }}
-        package: .
