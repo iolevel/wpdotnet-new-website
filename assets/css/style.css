@@ -2558,12 +2558,12 @@ p {
         font-size: 36px;
         line-height: 45px; } }
     .single-features .features-title-icon .features-title a:hover {
-      color: #2f5597; }
+      color: #104cb3; }
   .single-features .features-title-icon .features-icon {
     position: relative;
     display: inline-block; }
     .single-features .features-title-icon .features-icon i {
-      font-size: 88px;
+      font-size: 88px;  
       line-height: 70px;
       color: #2f5597;
       position: relative;
