@@ -43,6 +43,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 else {
  //   exit;
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
     $customeremail = $_GET['test'];
 }
 
