@@ -73,6 +73,6 @@ try {
 }
 catch (\Exception $e) {
     // Set a 500 (internal server error) response code.
-    http_response_code(500);
     echo $e->getMessage();
+    http_response_code(500);
 }
