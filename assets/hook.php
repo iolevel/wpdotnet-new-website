@@ -2,10 +2,9 @@
 
 $customeremail = null;
 
-include_once "../vendor/autoload.php";
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    include_once "../vendor/autoload.php";
 
     $payload = @file_get_contents('php://input');
     $sig_header = $_SERVER['HTTP_STRIPE_SIGNATURE'];
@@ -43,10 +42,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 else {
-    //   exit;
-    ini_set('display_errors', 1);
-    error_reporting(E_ALL);
-    $customeremail = $_GET['test'];
+    exit;
+    // ini_set('display_errors', 1);
+    // error_reporting(E_ALL);
+    //$customeremail = $_GET['test'];
 }
 
 try {
