@@ -53,7 +53,7 @@ try {
     $email->setFrom('info@iolevel.com', "iolevel");
     $email->setReplyTo($customeremail);
     $email->addTo('wpdotnet@iolevel.com', "iolevel");
-    $email->addTo($customeremail, "iolevel");
+    $email->addTo($customeremail);
     $email->addContent("text/html", file_get_contents(__DIR__ . '/welcome-email.html'));
 
     // account credentials
