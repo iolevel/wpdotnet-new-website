@@ -48,10 +48,6 @@ else {
 
 try {
 
-    if (!$customeremail) {
-        throw new InvalidArgumentException("Unexpected! Missing customer's email.");
-    }
-
     $email = new SendGrid\Mail\Mail();
     $email->setSubject("Welcome to WpDotNet!");
     $email->setFrom('info@iolevel.com', "iolevel");
