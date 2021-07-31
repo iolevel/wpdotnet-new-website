@@ -262,5 +262,64 @@
         ],
         "description": "fast openSSL-compatible implementation of the Elliptic Curve Digital Signature Algorithm (ECDSA)",
         "homepage": "https://github.com/starkbank/ecdsa-php"
+    },
+    {
+        "name": "stripe/stripe-php",
+        "version": "v7.92.0",
+        "version_normalized": "7.92.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/stripe/stripe-php.git",
+            "reference": "4b549e6f7d3e7ffd877547a0f1e8bd01c363e268"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/stripe/stripe-php/zipball/4b549e6f7d3e7ffd877547a0f1e8bd01c363e268",
+            "reference": "4b549e6f7d3e7ffd877547a0f1e8bd01c363e268",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "ext-json": "*",
+            "ext-mbstring": "*",
+            "php": ">=5.6.0"
+        },
+        "require-dev": {
+            "friendsofphp/php-cs-fixer": "2.17.1",
+            "php-coveralls/php-coveralls": "^2.1",
+            "phpunit/phpunit": "^5.7",
+            "squizlabs/php_codesniffer": "^3.3",
+            "symfony/process": "~3.4"
+        },
+        "time": "2021-07-28T17:38:57+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Stripe\\": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Stripe and contributors",
+                "homepage": "https://github.com/stripe/stripe-php/contributors"
+            }
+        ],
+        "description": "Stripe PHP Library",
+        "homepage": "https://stripe.com/",
+        "keywords": [
+            "api",
+            "payment processing",
+            "stripe"
+        ]
     }
 ]
