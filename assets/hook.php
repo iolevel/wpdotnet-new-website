@@ -2,9 +2,10 @@
 
 $customeremail = null;
 
+include_once "../vendor/autoload.php";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    include_once "../vendor/autoload.php";
 
     $payload = @file_get_contents('php://input');
     $sig_header = $_SERVER['HTTP_STRIPE_SIGNATURE'];
@@ -23,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         http_response_code(400);
         exit($e->getMessage());
     }
-    catch(\Stripe\Exception\SignatureVerificationException $e) {
+    catch (\Stripe\Exception\SignatureVerificationException $e) {
         http_response_code(400);
         exit($e->getMessage());
     }
@@ -42,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 else {
- //   exit;
+    //   exit;
     ini_set('display_errors', 1);
     error_reporting(E_ALL);
     $customeremail = $_GET['test'];
@@ -73,5 +74,5 @@ catch (\Exception $e) {
     // Set a 500 (internal server error) response code.
     print_r($e);
     echo $e->getMessage();
-    //http_response_code(500);
+//http_response_code(500);
 }
