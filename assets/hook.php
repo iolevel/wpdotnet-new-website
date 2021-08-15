@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                  */
                 $subscription = $event->data->object;
 
-                $stripe = new \Stripe\StripeClient;
+                $stripe = new \Stripe\StripeClient(getenv('STRIPE_APIKEY'));
                 $customeremail = $stripe->customers->retrieve($subscription->customer, [])->email;
 
                 break;
