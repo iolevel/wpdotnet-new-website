@@ -3,7 +3,7 @@
 $customeremail = null;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
+
     include_once "../vendor/autoload.php";
 
     $payload = @file_get_contents('php://input');
@@ -34,7 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
              * @var \Stripe\Subscription $subscription
              */
             $subscription = $event->data->object;
-            $customeremail = $subscription->customer->email;
+
+            $stripe = new \Stripe\StripeClient;
+            $customeremail = $stripe->customers->retrieve($subscription->customer, [])->email;
+
             break;
         default:
             http_response_code(500);
@@ -43,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 else {
     exit;
-    //$customeremail = $_GET['test'];
+//$customeremail = $_GET['test'];
 }
 
 try {
