@@ -28,20 +28,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit($e->getMessage());
     }
 
-    switch ($event->type) {
-        case 'customer.subscription.created':
-            /**
-             * @var \Stripe\Subscription $subscription
-             */
-            $subscription = $event->data->object;
+    try
+    {
+        switch ($event->type) {
+            case 'customer.subscription.created':
+                /**
+                 * @var \Stripe\Subscription $subscription
+                 */
+                $subscription = $event->data->object;
 
-            $stripe = new \Stripe\StripeClient;
-            $customeremail = $stripe->customers->retrieve($subscription->customer, [])->email;
+                $stripe = new \Stripe\StripeClient(getenv('STRIPE_APIKEY'));
+                $customeremail = $stripe->customers->retrieve($subscription->customer, [])->email;
 
-            break;
-        default:
-            http_response_code(500);
-            exit("Unknown event type $event->type");
+                break;
+            default:
+                http_response_code(500);
+                exit("Unknown event type $event->type");
+        }
+    }
+    catch (Exception $e) {
+        // Set a 500 (internal server error) response code.
+        print_r($e);
+        http_response_code(500);
     }
 }
 else {
@@ -74,6 +82,6 @@ try {
 catch (\Exception $e) {
     // Set a 500 (internal server error) response code.
     print_r($e);
-    echo $e->getMessage();
-//http_response_code(500);
+    //echo $e->getMessage();
+    http_response_code(500);
 }
